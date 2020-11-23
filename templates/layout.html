@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <!-- analytics -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-K69Q8M0BNK"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-K69Q8M0BNK');
+            </script>
+
+        <!-- Adsense -->
+        <script data-ad-client="ca-pub-6973560658879651" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title>Movie Search: {% block title %}{% endblock %}</title>
+        <!-- adsense -->
+    </head>
+
+    <body>
+        <!-- NAVBAR -->
+        <nav class="my-navbar">
+            <div id="nav-div">
+                <ul>
+                    <li class="favicon"><a href="/"><img src="/static/favicon.png"></a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- end NAVBAR -->
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+
+
+        <main class="container p-2">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="small text-center text-muted">
+            Website created by Dean Wilson.
+        </footer>
+
+    </body>
+
+</html>
